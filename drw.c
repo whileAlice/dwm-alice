@@ -272,7 +272,7 @@ drw_text(Drw *drw, int x, int y, unsigned int w, unsigned int h, unsigned int lp
 				charexists = charexists || XftCharExists(drw->dpy, curfont->xfont, utf8codepoint);
 				if (charexists) {
 					drw_font_getexts(curfont, text, utf8charlen, &tmpw, NULL);
-					if (ew + ellipsis_width <= w) {
+					if (ew + ellipsis_width <= w - lpad) {
 						/* keep track where the ellipsis still fits */
 						ellipsis_x = x + ew;
 						ellipsis_w = w - ew;
