@@ -336,6 +336,8 @@ static const Key keys[] = {
 	{ MODKEY,                       XK_l,          setmfact,               {.f = +0.05} },
 	{ MODKEY,                       XK_Return,     zoom,                   {0} },
 	{ MODKEY,                       XK_Tab,        view,                   {0} },
+	{ MODKEY,                       XK_Right,      nextview,               {0} },
+	{ MODKEY,                       XK_Left,       previousview,           {0} },
 	{ MODKEY|ControlMask,           XK_z,          showhideclient,         {0} },
 	{ MODKEY|ControlMask,           XK_s,          unhideall,              {0} },
 	{ MODKEY|ShiftMask,             XK_c,          killclient,             {0} },
@@ -381,4 +383,3 @@ static const Button buttons[] = {
 	{ ClkTagBar,            MODKEY,              Button1,        tag,            {0} },
 	{ ClkTagBar,            MODKEY,              Button3,        toggletag,      {0} },
 };
-

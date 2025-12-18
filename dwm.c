@@ -377,6 +377,8 @@ static void updatesizehints(Client *c);
 static void updatestatus(void);
 static void updatetitle(Client *c);
 static void updatewmhints(Client *c);
+static void nextview(const Arg *arg);
+static void previousview(const Arg *arg);
 static void view(const Arg *arg);
 static Client *wintoclient(Window w);
 static Monitor *wintomon(Window w);
@@ -2581,6 +2583,26 @@ updatewmhints(Client *c)
 			c->neverfocus = 0;
 		XFree(wmh);
 	}
+}
+
+void
+nextview(const Arg *arg)
+{
+	unsigned int current_tags = selmon->tagset[selmon->seltags];
+	unsigned int next_tags = ( current_tags << 1 ) | ( current_tags >> (9 - 1) );
+	selmon->tagset[selmon->seltags] = next_tags;
+	focus(NULL);
+	arrange(selmon);
+}
+
+void
+previousview(const Arg *arg)
+{
+	unsigned int current_tags = selmon->tagset[selmon->seltags];
+	unsigned int next_tags = ( current_tags >> 1 ) | ( current_tags << (9 - 1) );
+	selmon->tagset[selmon->seltags] = next_tags;
+	focus(NULL);
+	arrange(selmon);
 }
 
 void
