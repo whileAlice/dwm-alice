@@ -19,8 +19,8 @@ tile(Monitor *m)
 	sw = mw = m->ww;
 
 	if (m->nmaster && n > m->nmaster) {
-		sw = mw * (1 - m->mfact);
-		mw = mw * m->mfact;
+		sw = round(mw * (1 - m->mfact));
+		mw = round(mw * m->mfact);
 		sx = mx + mw;
 	}
 
@@ -35,4 +35,3 @@ tile(Monitor *m)
 			sy += HEIGHT(c);
 		}
 }
-

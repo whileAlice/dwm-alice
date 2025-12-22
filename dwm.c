@@ -22,6 +22,7 @@
  */
 #include <errno.h>
 #include <locale.h>
+#include <math.h>
 #include <signal.h>
 #include <stdarg.h>
 #include <stdio.h>
@@ -990,7 +991,7 @@ void
 drawbar(Monitor *m)
 {
 	Bar *bar;
-	
+
 		for (bar = m->bar; bar; bar = bar->next)
 			drawbarwin(bar);
 }
@@ -2709,4 +2710,3 @@ main(int argc, char *argv[])
 	XCloseDisplay(dpy);
 	return EXIT_SUCCESS;
 }
-
