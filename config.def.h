@@ -10,8 +10,8 @@ static const unsigned int snap           = 32;  /* snap pixel */
 static const int swallowfloating         = 1;   /* 1 means swallow floating windows by default */
 static const int showbar                 = 1;   /* 0 means no bar */
 static const int topbar                  = 1;   /* 0 means bottom bar */
-#define ICONSIZE 20    /* icon size */
-#define ICONSPACING 5  /* space between icon and title */
+#define ICONSIZE 14    /* icon size */
+#define ICONSPACING 6  /* space between icon and title */
 /* Status is to be shown on: -1 (all monitors), 0 (a specific monitor by index), 'A' (active monitor) */
 static const int statusmon               = 'A';
 
