@@ -23,3 +23,5 @@
 #include "layout_monocle.c"
 #include "layout_tile.c"
 
+/* Alice's patches */
+#include "switchview.c"

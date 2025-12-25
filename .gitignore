@@ -1,4 +1,5 @@
 .cache
+.clang-format
 compile_commands.json
 *.o
 config.h

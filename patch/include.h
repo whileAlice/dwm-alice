@@ -22,3 +22,5 @@
 #include "layout_monocle.h"
 #include "layout_tile.h"
 
+/* Alice's patches */
+#include "switchview.h"
