@@ -1,5 +1,7 @@
 /* See LICENSE file for copyright and license details. */
 
+#define FLEXWINTITLE_BORDERS 0
+
 /* Helper macros for spawning commands */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
 #define CMD(...)   { .v = (const char*[]){ __VA_ARGS__, NULL } }
@@ -35,24 +37,24 @@ static char selbgcolor[]                 = "#b16286";
 static char selbordercolor[]             = "#b16286";
 static char selfloatcolor[]              = "#005577";
 
-static char titlenormfgcolor[]           = "#bbbbbb";
-static char titlenormbgcolor[]           = "#222222";
-static char titlenormbordercolor[]       = "#444444";
+static char titlenormfgcolor[]           = "#ebdbb2";
+static char titlenormbgcolor[]           = "#282828";
+static char titlenormbordercolor[]       = "#282828";
 static char titlenormfloatcolor[]        = "#db8fd9";
 
-static char titleselfgcolor[]            = "#eeeeee";
+static char titleselfgcolor[]            = "#ffffff";
 static char titleselbgcolor[]            = "#005577";
 static char titleselbordercolor[]        = "#005577";
 static char titleselfloatcolor[]         = "#005577";
 
-static char tagsnormfgcolor[]            = "#bbbbbb";
-static char tagsnormbgcolor[]            = "#222222";
-static char tagsnormbordercolor[]        = "#444444";
+static char tagsnormfgcolor[]            = "#ebdbb2";
+static char tagsnormbgcolor[]            = "#282828";
+static char tagsnormbordercolor[]        = "#282828";
 static char tagsnormfloatcolor[]         = "#db8fd9";
 
-static char tagsselfgcolor[]             = "#eeeeee";
-static char tagsselbgcolor[]             = "#005577";
-static char tagsselbordercolor[]         = "#005577";
+static char tagsselfgcolor[]             = "#ffffff";
+static char tagsselbgcolor[]             = "#b16286";
+static char tagsselbordercolor[]         = "#b16286";
 static char tagsselfloatcolor[]          = "#005577";
 
 static char hidnormfgcolor[]             = "#005577";
@@ -65,12 +67,12 @@ static char urgbgcolor[]                 = "#222222";
 static char urgbordercolor[]             = "#ff0000";
 static char urgfloatcolor[]              = "#db8fd9";
 
-static char ltsymbolfgcolor[]            = "#222222";
-static char ltsymbolbgcolor[]            = "#fe9877";
+static char ltsymbolfgcolor[]            = "#ebdbb2";
+static char ltsymbolbgcolor[]            = "#282828";
 
-static char normTTBbgcolor[]             = "#330000";
-static char normLTRbgcolor[]             = "#330033";
-static char normMONObgcolor[]            = "#000033";
+static char normTTBbgcolor[]             = "#712246";
+static char normLTRbgcolor[]             = "#712246";
+static char normMONObgcolor[]            = "#ac0400";
 static char normGRIDbgcolor[]            = "#003300";
 static char normGRD1bgcolor[]            = "#003300";
 static char normGRD2bgcolor[]            = "#003300";
@@ -79,9 +81,9 @@ static char normHGRDbgcolor[]            = "#b96600";
 static char normDWDLbgcolor[]            = "#003333";
 static char normSPRLbgcolor[]            = "#333300";
 static char normfloatbgcolor[]           = "#115577";
-static char actTTBbgcolor[]              = "#440000";
-static char actLTRbgcolor[]              = "#440044";
-static char actMONObgcolor[]             = "#000044";
+static char actTTBbgcolor[]              = "#914266";
+static char actLTRbgcolor[]              = "#914266";
+static char actMONObgcolor[]             = "#cc241d";
 static char actGRIDbgcolor[]             = "#004400";
 static char actGRD1bgcolor[]             = "#004400";
 static char actGRD2bgcolor[]             = "#004400";
@@ -90,9 +92,9 @@ static char actHGRDbgcolor[]             = "#b97711";
 static char actDWDLbgcolor[]             = "#004444";
 static char actSPRLbgcolor[]             = "#444400";
 static char actfloatbgcolor[]            = "#116688";
-static char selTTBbgcolor[]              = "#550000";
-static char selLTRbgcolor[]              = "#550055";
-static char selMONObgcolor[]             = "#212171";
+static char selTTBbgcolor[]              = "#b16286";
+static char selLTRbgcolor[]              = "#b16286";
+static char selMONObgcolor[]             = "#fb4934";
 static char selGRIDbgcolor[]             = "#005500";
 static char selGRD1bgcolor[]             = "#005500";
 static char selGRD2bgcolor[]             = "#005500";
@@ -102,7 +104,7 @@ static char selDWDLbgcolor[]             = "#005555";
 static char selSPRLbgcolor[]             = "#555500";
 static char selfloatbgcolor[]            = "#117799";
 
-static const unsigned int baralpha = 0xd0;
+static const unsigned int baralpha = OPAQUE;
 static const unsigned int borderalpha = OPAQUE;
 static const unsigned int alphas[][3] = {
 	/*                       fg      bg        border     */
