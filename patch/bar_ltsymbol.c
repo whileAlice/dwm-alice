@@ -1,7 +1,7 @@
 int
 width_ltsymbol(Bar *bar, BarArg *a)
 {
-	return TEXTW(bar->mon->ltsymbol);
+	return TEXTW(bar->mon->ltsymbol) - 1;
 }
 
 int

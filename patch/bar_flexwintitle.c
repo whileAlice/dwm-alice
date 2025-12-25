@@ -109,7 +109,7 @@ flextitledraw(Monitor *m, Client *c, int unused, int x, int w, int tabscheme, Ar
 	if (!c)
 		return;
 	int i, nclienttags = 0, nviewtags = 0;
-	int tpad = lrpad / 2;
+	int tpad = lrpad / 2 + 2;
 	int ipad = c->icon ? c->icw + ICONSPACING : 0;
 	int tx = x;
 	int tw = w;
@@ -329,4 +329,3 @@ flextitlecalculate(
 	}
 	return 1;
 }
-
