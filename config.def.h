@@ -1,6 +1,8 @@
 /* See LICENSE file for copyright and license details. */
 
-#define FLEXWINTITLE_BORDERS 0
+#define FLEXWINTITLE_BORDERS      0
+#define FLEXWINTITLE_MASTERWEIGHT 1
+#define FLEXWINTITLE_STACKWEIGHT  1
 
 /* Helper macros for spawning commands */
 #define SHCMD(cmd) { .v = (const char*[]){ "/bin/sh", "-c", cmd, NULL } }
