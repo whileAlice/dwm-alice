@@ -33,8 +33,8 @@ static char normbordercolor[]            = "#914266";
 static char normfloatcolor[]             = "#db8fd9";
 
 static char selfgcolor[]                 = "#ffffff";
-static char selbgcolor[]                 = "#b16286";
-static char selbordercolor[]             = "#b16286";
+static char selbgcolor[]                 = "#8f3f71";
+static char selbordercolor[]             = "#8f3f71";
 static char selfloatcolor[]              = "#005577";
 
 static char titlenormfgcolor[]           = "#ebdbb2";
@@ -53,8 +53,8 @@ static char tagsnormbordercolor[]        = "#282828";
 static char tagsnormfloatcolor[]         = "#db8fd9";
 
 static char tagsselfgcolor[]             = "#ffffff";
-static char tagsselbgcolor[]             = "#b16286";
-static char tagsselbordercolor[]         = "#b16286";
+static char tagsselbgcolor[]             = "#8f3f71";
+static char tagsselbordercolor[]         = "#8f3f71";
 static char tagsselfloatcolor[]          = "#005577";
 
 static char hidnormfgcolor[]             = "#005577";
@@ -67,12 +67,12 @@ static char urgbgcolor[]                 = "#222222";
 static char urgbordercolor[]             = "#ff0000";
 static char urgfloatcolor[]              = "#db8fd9";
 
-static char ltsymbolfgcolor[]            = "#ebdbb2";
-static char ltsymbolbgcolor[]            = "#282828";
+static char ltsymbolfgcolor[]            = "#282828";
+static char ltsymbolbgcolor[]            = "#ebdbb2";
 
-static char normTTBbgcolor[]             = "#712246";
-static char normLTRbgcolor[]             = "#712246";
-static char normMONObgcolor[]            = "#ac0400";
+static char normTTBbgcolor[]             = "#7a2a5c";
+static char normLTRbgcolor[]             = "#7a2a5c";
+static char normMONObgcolor[]            = "#613256";
 static char normGRIDbgcolor[]            = "#003300";
 static char normGRD1bgcolor[]            = "#003300";
 static char normGRD2bgcolor[]            = "#003300";
@@ -81,9 +81,9 @@ static char normHGRDbgcolor[]            = "#b96600";
 static char normDWDLbgcolor[]            = "#003333";
 static char normSPRLbgcolor[]            = "#333300";
 static char normfloatbgcolor[]           = "#115577";
-static char actTTBbgcolor[]              = "#914266";
-static char actLTRbgcolor[]              = "#914266";
-static char actMONObgcolor[]             = "#cc241d";
+static char actTTBbgcolor[]              = "#7f2f61";
+static char actLTRbgcolor[]              = "#7f2f61";
+static char actMONObgcolor[]             = "#613256";
 static char actGRIDbgcolor[]             = "#004400";
 static char actGRD1bgcolor[]             = "#004400";
 static char actGRD2bgcolor[]             = "#004400";
@@ -92,9 +92,9 @@ static char actHGRDbgcolor[]             = "#b97711";
 static char actDWDLbgcolor[]             = "#004444";
 static char actSPRLbgcolor[]             = "#444400";
 static char actfloatbgcolor[]            = "#116688";
-static char selTTBbgcolor[]              = "#b16286";
-static char selLTRbgcolor[]              = "#b16286";
-static char selMONObgcolor[]             = "#fb4934";
+static char selTTBbgcolor[]              = "#8f3f71";
+static char selLTRbgcolor[]              = "#8f3f71";
+static char selMONObgcolor[]             = "#714266";
 static char selGRIDbgcolor[]             = "#005500";
 static char selGRD1bgcolor[]             = "#005500";
 static char selGRD2bgcolor[]             = "#005500";
@@ -289,18 +289,18 @@ static const BarRule barrules[] = {
 };
 
 /* layout(s) */
-static const float mfact     = 0.55; /* factor of master area size [0.05..0.95] */
-static const int nmaster     = 1;    /* number of clients in master area */
-static const int resizehints = 0;    /* 1 means respect size hints in tiled resizals */
-static const int lockfullscreen = 1; /* 1 will force focus on the fullscreen window */
-static const int refreshrate    = 60; /* refresh rate (per second) for client move/resize */
+static const float mfact        = 0.5; /* factor of master area size [0.05..0.95] */
+static const int nmaster        = 1;   /* number of clients in master area */
+static const int resizehints    = 0;   /* 1 means respect size hints in tiled resizals */
+static const int lockfullscreen = 1;   /* 1 will force focus on the fullscreen window */
+static const int refreshrate    = 60;  /* refresh rate (per second) for client move/resize */
 
 static const Layout layouts[] = {
 	/* symbol     arrange function */
-	{ "[C]",      col },     /* first entry is default */
-	{ "[F]",      NULL },    /* no layout function means floating behavior */
-	{ "[M]",      monocle },
-	{ "[T]",      tile },
+	{ "C",      col },     /* first entry is default */
+	{ "F",      NULL },    /* no layout function means floating behavior */
+	{ "M",      monocle },
+	{ "T",      tile },
 };
 
 /* key definitions */
