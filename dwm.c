@@ -2585,11 +2585,76 @@ updatewmhints(Client *c)
 	}
 }
 
+unsigned int
+shift_left_along_mask(unsigned int bits, unsigned int mask)
+{
+  unsigned int shifted_bits = 0;
+  unsigned int wrap_mask    = (1 << 9) - 1;
+
+begin:
+  while (mask != 0 && bits != 0) {
+    for (unsigned int bit = 1; bit != 0; bit <<= 1) {
+      if (bits & bit) {
+        unsigned int shifted_bit = bit;
+
+        do {
+        	shifted_bit = ( shifted_bit << 1 | shifted_bit >> (9 - 1) ) & wrap_mask;
+        } while (!(shifted_bit & mask));
+
+        bits         ^= bit;
+        mask         ^= shifted_bit;
+        shifted_bits |= shifted_bit;
+
+        goto begin;
+      }
+    }
+  }
+
+  return shifted_bits;
+}
+
+unsigned int
+shift_right_along_mask(unsigned int bits, unsigned int mask)
+{
+  unsigned int shifted_bits = 0;
+  unsigned int wrap_mask    = (1 << 9) - 1;
+
+begin:
+  while (mask != 0 && bits != 0) {
+    for (unsigned int bit = 1; bit != 0; bit <<= 1) {
+      if (bits & bit) {
+        unsigned int shifted_bit = bit;
+
+        do {
+        	shifted_bit = ( shifted_bit >> 1 | shifted_bit << (9 - 1) ) & wrap_mask;
+        } while (!(shifted_bit & mask));
+
+        bits         ^= bit;
+        mask         ^= shifted_bit;
+        shifted_bits |= shifted_bit;
+
+        goto begin;
+      }
+    }
+  }
+
+  return shifted_bits;
+}
+
 void
 nextview(const Arg *arg)
 {
 	unsigned int current_tags = selmon->tagset[selmon->seltags];
-	unsigned int next_tags = ( current_tags << 1 ) | ( current_tags >> (9 - 1) );
+
+	Client* c;
+	unsigned int occ = 0;
+	for (c = selmon->clients; c; c = c->next) {
+		occ |= c->tags == 255 ? 0 : c->tags;
+	}
+
+	if (occ == 0) return;
+
+	unsigned int next_tags = shift_left_along_mask(current_tags, occ);
 	selmon->tagset[selmon->seltags] = next_tags;
 	focus(NULL);
 	arrange(selmon);
@@ -2599,7 +2664,16 @@ void
 previousview(const Arg *arg)
 {
 	unsigned int current_tags = selmon->tagset[selmon->seltags];
-	unsigned int next_tags = ( current_tags >> 1 ) | ( current_tags << (9 - 1) );
+
+	Client* c;
+	unsigned int occ = 0;
+	for (c = selmon->clients; c; c = c->next) {
+		occ |= c->tags == 255 ? 0 : c->tags;
+	}
+
+	if (occ == 0) return;
+
+	unsigned int next_tags = shift_right_along_mask(current_tags, occ);
 	selmon->tagset[selmon->seltags] = next_tags;
 	focus(NULL);
 	arrange(selmon);
